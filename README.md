@@ -3,13 +3,21 @@
 
 Liste des fonctions à faire : 
 - boolean isVoyelle(char a);
-- boolean contientDesVoyelles(String s);
+
+> public static boolean isVowel(char c) {
+>  return "AEIOUaeiou".indexOf(c) != -1;
+> }
+
+- boolean contientDesVoyelles(String s); http://java67.blogspot.fr/2013/11/how-to-count-vowels-and-consonants-in-Java-String-word.html
 - String inverserTousLesDeuxCaracteres();
 - boolean isPair(int i);
+
+> if ( (x & 1) == 0 ) { even... } else { odd... }
+
 - Préparer une série de fonction permettant de rechercher dans HashMap Striing, String, HashMap Integer,Integer (attention, bien mettre le Integer et pas int)
 - Fonction de recherche dans un tableau à deux dimension, que ce soit String ou int
-- Fonction de lecture/écrire fichier
-- Séparer une chaine en fonction d'un séparateur
+- Fonction de lecture/écrire utilisateur/fichier
+- Séparer une chaine en fonction d'un séparateur: split
 
 Liste d'exos entrainement trouvés:
 - Given two strings, write a program that efficiently finds the longest common subsequence.
