@@ -30,4 +30,20 @@ public class TextUtils {
 		}
 		return count;
 	}
+	
+	private ArrayList<String>  lireFichierParLigne(String nomFichier){
+		ArrayList<String> liste = new ArrayList<String>();
+		Reader reader = null;
+		try{
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream(nomFichier))); 
+		} catch (FileNotFoundException e) { 
+			e.printStackTrace(); 
+		} 
+		Scanner scanner = new Scanner(reader);
+		//System.out.println(scanner.next(Pattern.compile(separateur)));
+		while (scanner.hasNextLine())
+			liste.add(scanner.nextLine());
+		scanner.close();
+		return liste;
+	}
 }
