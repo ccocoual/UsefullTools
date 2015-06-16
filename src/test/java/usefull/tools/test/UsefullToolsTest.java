@@ -18,7 +18,7 @@ public class UsefullToolsTest {
 		assertTrue("A is a vowel", TextUtils.isVowel('A'));
 		assertEquals("What is the reverse String of Bonjour","ruojnoB",TextUtils.reverseString("Bonjour"));
 	}
-	
+
 	@Test
 	public void numberUtilsTest(){
 		assertFalse("3 is not an odd number",NumberUtils.isOdd(3));
