@@ -1,5 +1,14 @@
 package usefull.tools;
 
+import java.beans.Statement;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class TextUtils {
 
 	public static boolean isVowel(char c) { return "AEIOUYaeiouy".indexOf(c) != -1; }
@@ -31,7 +40,7 @@ public class TextUtils {
 		return count;
 	}
 	
-	private ArrayList<String>  lireFichierParLigne(String nomFichier){
+	private static ArrayList<String>  lireFichierParLigne(String nomFichier){
 		ArrayList<String> liste = new ArrayList<String>();
 		Reader reader = null;
 		try{
@@ -47,11 +56,10 @@ public class TextUtils {
 		return liste;
 	}
 	
-	private void afficherListe(ArrayList<Statement> liste){
+	private static void afficherListe(ArrayList<Object> liste){
 		for(int i=0; i< liste.size(); i++ ){
 			System.out.println("Ligne " + i + " : " + liste.get(i));
 		}
 	}
-
 
 }
