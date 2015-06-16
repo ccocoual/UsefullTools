@@ -40,7 +40,7 @@ public class TextUtils {
 		return count;
 	}
 	
-	private static ArrayList<String>  lireFichierParLigne(String nomFichier){
+	public static ArrayList<String>  lireFichierParLigne(String nomFichier){
 		ArrayList<String> liste = new ArrayList<String>();
 		Reader reader = null;
 		try{
@@ -56,10 +56,17 @@ public class TextUtils {
 		return liste;
 	}
 	
-	private static void afficherListe(ArrayList<Object> liste){
+	public static void afficherListe(ArrayList<Object> liste){
 		for(int i=0; i< liste.size(); i++ ){
-			System.out.println("Ligne " + i + " : " + liste.get(i));
+			System.out.println("Ligne " + i + " : " + liste.get(i).toString());
 		}
 	}
-
+	
+	public static String reverseString(String str){
+		String reverse = "";
+		for(int i=str.length - 1 ; i>=0 ; i--){
+			reverse = reverse + str.charAt(i);
+		}
+		return reverse;
+	}
 }

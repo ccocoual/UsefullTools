@@ -5,9 +5,6 @@
 - [x] boolean isVoyelle(char c);
 - [x] boolean contientDesVoyelles(String s);
 - [x] int compteVoyelles(String str)
-- [ ] boolean isPonctuation(char c)
-- [ ] boolean containPonctuation(String str)
-- [ ] int countPonctuation(String str)
 - [ ] String inverserTousLesDeuxCaracteres();
 - [x] boolean isPair(int i);
 - [ ] Préparer une série de fonction permettant de rechercher dans HashMap String, String, HashMap Integer,Integer (attention, bien mettre le Integer et pas int)
