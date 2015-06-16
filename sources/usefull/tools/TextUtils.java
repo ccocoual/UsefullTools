@@ -46,4 +46,12 @@ public class TextUtils {
 		scanner.close();
 		return liste;
 	}
+	
+	private void afficherListe(ArrayList<Statement> liste){
+		for(int i=0; i< liste.size(); i++ ){
+			System.out.println("Ligne " + i + " : " + liste.get(i));
+		}
+	}
+
+
 }
