@@ -11,14 +11,21 @@ public class UsefullToolsTest {
 
 	@Test
 	public void textUtilsTest() {
-		String str = "Bonjour, comment allez-vous ?";
+		String str = "";
 		
+		str = "Bonjour, comment allez-vous ?";
 		assertTrue("Str contains vowels", TextUtils.containVowels(str));
 		assertEquals("How many vowels in String :"+str,9, TextUtils.countVowels(str));
 		assertTrue("A is a vowel", TextUtils.isVowel('A'));
 		assertEquals("What is the reverse String of Bonjour","ruojnoB",TextUtils.reverseString("Bonjour"));
-		assertEquals("What is the reverse String of Bonjour","oBjnuor",TextUtils.reverseEachTwoString("Bonjour"));
-		System.out.println(TextUtils.reverseEachTwoString(str));
+
+		assertEquals("What is the reverse String of Bonjour","ab",TextUtils.reverseEachTwoCaracterWithoutBlanks("ba"));
+		assertEquals("What is the reverse String of Bonjour","oBjnuor",TextUtils.reverseEachTwoCaracterWithoutBlanks("Bonjour"));
+		assertEquals("What is the reverse String of Bonjour","oBjnuor",TextUtils.reverseEachTwoCaracter("Bonjour"));
+		assertEquals("What is the reverse String of Bonjour aurevoir a demain","oBjnuor uaerovri a edamni",TextUtils.reverseEachTwoCaracter("Bonjour aurevoir a demain"));
+		assertEquals("What is the reverse String of     Bonjour       aurevoir a       demain    ","oBjnuor uaerovri a edamni",TextUtils.reverseEachTwoCaracter("    Bonjour       aurevoir a       demain    "));
+
+	
 	}
 
 	@Test
