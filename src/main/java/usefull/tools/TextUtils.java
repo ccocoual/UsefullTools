@@ -69,4 +69,17 @@ public class TextUtils {
 		}
 		return reverse;
 	}
+	
+	public static String reverseEachTwoString(String str){
+		String reverse = "";
+		
+		for(int i=0 ; i<str.length(); i+=2){
+			if(NumberUtils.isOdd(i) && i+1 != str.length()){
+				reverse = reverse + str.charAt(i+1) + str.charAt(i);  
+			}else if(i+1 == str.length()){
+				reverse = reverse + str.charAt(i);
+			}
+		}
+		return reverse;
+	}
 }

@@ -17,6 +17,8 @@ public class UsefullToolsTest {
 		assertEquals("How many vowels in String :"+str,9, TextUtils.countVowels(str));
 		assertTrue("A is a vowel", TextUtils.isVowel('A'));
 		assertEquals("What is the reverse String of Bonjour","ruojnoB",TextUtils.reverseString("Bonjour"));
+		assertEquals("What is the reverse String of Bonjour","oBjnuor",TextUtils.reverseEachTwoString("Bonjour"));
+		System.out.println(TextUtils.reverseEachTwoString(str));
 	}
 
 	@Test

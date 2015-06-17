@@ -6,6 +6,7 @@
 - [x] boolean contientDesVoyelles(String s);
 - [x] int compteVoyelles(String str)
 - [ ] String inverserTousLesDeuxCaracteres();
+- [x] String reverseString();
 - [x] boolean isPair(int i);
 - [ ] Préparer une série de fonction permettant de rechercher dans HashMap String, String, HashMap Integer,Integer (attention, bien mettre le Integer et pas int)
 - [ ] Fonction de recherche dans un tableau à deux dimension, que ce soit String ou int
