@@ -98,8 +98,9 @@ public class TextUtils {
 			endI = stringSize-2;
 		}
 		
-		for(int i = 0; i < endI; i+=2)
+		for(int i = 0; i < endI; i+=2){
 			res += reverseTwoCaracter(s.substring(i, i+2));
+		}
 		res = res + lastChar;
 		return res;
 	}
