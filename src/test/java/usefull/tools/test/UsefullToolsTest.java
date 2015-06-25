@@ -2,6 +2,8 @@ package usefull.tools.test;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+
 import org.junit.Test;
 
 import usefull.tools.NumberUtils;
@@ -25,7 +27,14 @@ public class UsefullToolsTest {
 		assertEquals("What is the reverse String of Bonjour aurevoir a demain","oBjnuor uaerovri a edamni",TextUtils.reverseEachTwoCaracter("Bonjour aurevoir a demain"));
 		assertEquals("What is the reverse String of     Bonjour       aurevoir a       demain    ","oBjnuor uaerovri a edamni",TextUtils.reverseEachTwoCaracter("    Bonjour       aurevoir a       demain    "));
 
-	
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("key1", "val1");
+		map.put("key2", "val2");
+		map.put("key2", "val2");
+		map.put("key3", "val3");
+		map.put("key4", "val4");
+		assertTrue("Key4 in HashMap", TextUtils.isWordInHashMap(map, "val3"));
 	}
 
 	@Test

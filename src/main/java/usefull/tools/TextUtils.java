@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -111,5 +113,22 @@ public class TextUtils {
 		char a = s.charAt(0);
 		char b = s.charAt(1);
 		return "" + b + a;
+	}
+	
+	/**
+	 * 
+	 * @param map
+	 * @param key
+	 * @return null if the key doesn't exist in map
+	 */
+	public static boolean isWordInHashMap(HashMap<String, String> map, String word){
+		String key = "";
+		Iterator<String> it = map.keySet().iterator();
+		while(it.hasNext()){
+			key = it.next();
+			if(map.get(key) == word)
+				return true;
+		}
+		return false;
 	}
 }

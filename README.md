@@ -8,6 +8,7 @@
 - [ ] String inverserTousLesDeuxCaracteres();
 - [x] String reverseString();
 - [x] boolean isPair(int i);
+- [x] boolean isWordInHashMap(HashMap<String, String> map, String word);
 - [ ] Préparer une série de fonction permettant de rechercher dans HashMap String, String, HashMap Integer,Integer (attention, bien mettre le Integer et pas int)
 - [ ] Fonction de recherche dans un tableau à deux dimension, que ce soit String ou int
 - [ ] Fonction de lecture/écriture utilisateur/fichier
