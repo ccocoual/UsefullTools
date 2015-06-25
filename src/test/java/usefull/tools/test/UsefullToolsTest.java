@@ -35,12 +35,20 @@ public class UsefullToolsTest {
 		map.put("key3", "val3");
 		map.put("key4", "val4");
 		assertTrue("Key4 in HashMap", TextUtils.isWordInHashMap(map, "val3"));
+
 	}
 
 	@Test
 	public void numberUtilsTest(){
 		assertFalse("3 is not an odd number",NumberUtils.isOdd(3));
 		assertTrue("2 is an odd number",NumberUtils.isOdd(2));
+		
+		
+		HashMap<Integer,Integer> map2 = new HashMap<Integer,Integer>();
+		map2.put(0, 1);
+		map2.put(1, 2);
+		map2.put(2, 3);
+		assertTrue("Key4 in HashMap", NumberUtils.isIntegerInHashMap(map2, 2));
 	}
 
 }
