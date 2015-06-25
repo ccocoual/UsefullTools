@@ -5,7 +5,7 @@
 - [x] boolean isVoyelle(char c);
 - [x] boolean contientDesVoyelles(String s);
 - [x] int compteVoyelles(String str)
-- [ ] String inverserTousLesDeuxCaracteres();
+- [x] String inverserTousLesDeuxCaracteres();
 - [x] String reverseString();
 - [x] boolean isPair(int i);
 - [x] boolean isWordInHashMap(HashMap<String, String> map, String word);
