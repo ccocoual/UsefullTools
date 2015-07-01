@@ -127,7 +127,7 @@ public class TextUtils {
 		Iterator<String> it = map.keySet().iterator();
 		while(it.hasNext()){
 			key = it.next();
-			if(map.get(key) == word)
+			if(map.get(key).equals(word))
 				return true;
 		}
 		return false;
