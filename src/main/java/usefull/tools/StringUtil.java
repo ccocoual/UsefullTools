@@ -1,4 +1,4 @@
-package parsifal.toolbox.business.util;
+package usefull.tools;
 
 import java.util.HashMap;
 import java.util.Iterator;

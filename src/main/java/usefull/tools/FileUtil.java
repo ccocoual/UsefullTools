@@ -1,4 +1,4 @@
-package parsifal.toolbox.business.util;
+package usefull.tools;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -12,13 +12,11 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.commons.io.input.BOMInputStream;
-
 public class FileUtil {
 	public static HashMap<String, String> fileToHashMap(String content,
 			String separator) {
 
-		HashMap<String, String> map = new HashMap<>();
+		HashMap<String, String> map = new HashMap<String, String>();
 		String[] lineList = content.split("\n");
 		for (String line : lineList) {
 			String[] data = line.split(separator);
@@ -72,7 +70,7 @@ public class FileUtil {
 			ex.printStackTrace();
 		}
 		String content = builder.toString();
-		content = content.replaceAll("é", "e");
+		content = content.replaceAll("ï¿½", "e");
 		return content;
 	}
 }

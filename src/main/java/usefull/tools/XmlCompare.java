@@ -1,4 +1,4 @@
-package parsifal.toolbox.business.util;
+package usefull.tools;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class XmlCompare {
 	private static Document toCheck;
 	
 	/**
-	 * Le message d'erreur généré par le comparateur
+	 * Le message d'erreur gï¿½nï¿½rï¿½ par le comparateur
 	 */
 	private String message;
 	
@@ -39,9 +39,9 @@ public class XmlCompare {
 	
 	/**
 	 * Instancie un nouveau comparateur XML
-	 * @param referentContent le contenu du XML référent
-	 * @param actualContent le contenu du XML qui va servir à la comparaison
-	 * @param parameters les valeurs des paramètres que l'on a inséré dans le contenu du XML référent
+	 * @param referentContent le contenu du XML rï¿½fï¿½rent
+	 * @param actualContent le contenu du XML qui va servir ï¿½ la comparaison
+	 * @param parameters les valeurs des paramï¿½tres que l'on a insï¿½rï¿½ dans le contenu du XML rï¿½fï¿½rent
 	 */
 	public XmlCompare(String referentContent, String actualContent, HashMap<String, String> parameters) {
 		try
@@ -65,11 +65,11 @@ public class XmlCompare {
 	
 	/**
 	 * Compare (structure et contenu) les deux documents XML.
-	 * @return vrai si les documents sont égaux, faux sinon
+	 * @return vrai si les documents sont ï¿½gaux, faux sinon
 	 */
 	public boolean compare() {
 		try{
-			//Deux documents sont identiques si leurs éléments root sont identiques
+			//Deux documents sont identiques si leurs ï¿½lï¿½ments root sont identiques
 			areEquals(ref.getRootElement(), toCheck.getRootElement(), values);
 		}
 		catch(Exception except){
@@ -81,7 +81,7 @@ public class XmlCompare {
 	}
 	
 	/**
-	 * Renvoi le message d'erreur si le système à detecter que les fichiers sont différents
+	 * Renvoi le message d'erreur si le systï¿½me ï¿½ detecter que les fichiers sont diffï¿½rents
 	 * @return le message d'erreur
 	 */
 	public String getMessage() {
@@ -114,13 +114,13 @@ public class XmlCompare {
 		}
 		
 
-		//On récupère les fichiers passés dans les paramètres du jar
+		//On rï¿½cupï¿½re les fichiers passï¿½s dans les paramï¿½tres du jar
 		if(args.length == 2 || valueFilePassed){
 			try {
 				ref = builder.build(new File(args[0]));
 				toCheck = builder.build(new File(args[1]));
 				
-				//On vérifie que les fichiers sont identiques, si ils ne le sont pas, au renvoie une erreur
+				//On vï¿½rifie que les fichiers sont identiques, si ils ne le sont pas, au renvoie une erreur
 				if(verifyDocument(ref, toCheck, values)) return;
 				else System.err.println("Fail");
 
@@ -140,7 +140,7 @@ public class XmlCompare {
 
 	private static boolean verifyDocument(Document ref2, Document toCheck2, HashMap<String,String> values) {
 		try{
-			//Deux documents sont identiques si leurs éléments root sont identiques
+			//Deux documents sont identiques si leurs ï¿½lï¿½ments root sont identiques
 			areEquals(ref2.getRootElement(),toCheck2.getRootElement(), values);
 		}
 		catch(Exception except){
@@ -151,12 +151,12 @@ public class XmlCompare {
 	}
 
 	private static boolean areEquals(Element e, Element e1, HashMap<String, String> values) throws Exception {
-		//Deux éléments sont identiques si leur nom, leurs attributs, leurs valeurs et leurs fils sont égaux
+		//Deux ï¿½lï¿½ments sont identiques si leur nom, leurs attributs, leurs valeurs et leurs fils sont ï¿½gaux
 		if(!e.getName().equals(e1.getName())) throw new Exception("Les elements " + e.getName() + " et " + e1.getName() + " ne sont pas identiques !");
 		if(!e.getChildren().isEmpty()){
 			if(!(e.getChildren().size()==e1.getChildren().size())) throw new Exception("Les elements " + e.getName() + " n'ont pas le meme nombre de fils !");
 			for (int i = 0; i < e.getChildren().size(); i++){
-				//On vérifie récursivement que tous les fils sont égaux
+				//On vï¿½rifie rï¿½cursivement que tous les fils sont ï¿½gaux
 				areEquals(e.getChildren().get(i), e1.getChildren().get(i), values);
 			}
 		}
@@ -167,7 +167,7 @@ public class XmlCompare {
 
 
 	private static boolean verifyAttributes(Element e, Element e1) throws Exception {
-		//Deux attributs sont identiques si leur valeur vérifie la règle de comparaison définie dans checkAttribute
+		//Deux attributs sont identiques si leur valeur vï¿½rifie la rï¿½gle de comparaison dï¿½finie dans checkAttribute
 		boolean attributeIsPresent = false;
 		if(!(e.getAttributes().size() == e1.getAttributes().size())) return false;
 		for(Attribute a : e.getAttributes()){
@@ -181,22 +181,22 @@ public class XmlCompare {
 		return attributeIsPresent;
 	}
 
-	//Règle de comparaison entre deux attributs
+	//Rï¿½gle de comparaison entre deux attributs
 	private static boolean checkAttribute(Attribute a, Attribute a1){
 		if (a.getValue().startsWith("RegEx(")) return a1.getValue().matches(a.getValue().substring(6,a.getValue().length()-1));
 		else return a1.getValue().trim().equals(a.getValue().trim());
 	}
 
-	//Règle de comparaison entre deux éléments finaux
+	//Rï¿½gle de comparaison entre deux ï¿½lï¿½ments finaux
 	private static boolean checkElement(Element e, Element e1){
 		
-		// Vérifier si le contenu de la balise est à ignoré
+		// Vï¿½rifier si le contenu de la balise est ï¿½ ignorï¿½
 		if (e.getValue().trim().equals("*")) return true;
 		
-		// Vérifier valeurs à valeurs avec des $ 
+		// Vï¿½rifier valeurs ï¿½ valeurs avec des $ 
 		if (values.containsKey(e.getValue())) return e1.getValue().trim().equals(values.get(e.getValue().trim()));
 		
-		// Vérifier les clés balises/valeurs
+		// Vï¿½rifier les clï¿½s balises/valeurs
 		//if (values.containsKey(e.getName())) return e1.getValue().equals(values.get(e.getName()));
 		
 		if (!e.getChildren().isEmpty() && !e1.getChildren().isEmpty() && ((e.getValue().equals("") && e1.getValue().equals("")) || (e.getValue().contains("\n")) && e1.getValue().contains("\n"))) return true;

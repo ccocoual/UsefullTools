@@ -1,4 +1,4 @@
-package parsifal.toolbox.business.util;
+package usefull.tools;
 
 public class ThreadUtil {
 	public static void sleep(int millis) {
